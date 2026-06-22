@@ -12,77 +12,115 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(-45deg,#ff0080,#7b00ff,#0099ff,#ff7b00);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
+background:#0d0d0d;
 color:white;
+overflow-x:hidden;
 }
 
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,0,128,0.5), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(0,153,255,0.5), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(123,0,255,0.5), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(255,123,0,0.5), transparent 30%);
+filter:blur(100px);
+z-index:-1;
+animation:bgmove 15s infinite alternate;
+}
+
+@keyframes bgmove{
+0%{transform:scale(1);}
+100%{transform:scale(1.2);}
 }
 
 header{
-padding:100px 20px;
+padding:120px 20px;
 text-align:center;
 }
 
 h1{
-font-size:60px;
-text-shadow:0 0 20px white;
+font-size:70px;
+background:linear-gradient(90deg,#ff0080,#0099ff,#7b00ff,#ff7b00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .slogan{
-font-size:24px;
 margin-top:20px;
+font-size:24px;
+color:#ddd;
 }
 
 .buttons{
-margin-top:35px;
+margin-top:40px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 30px;
+padding:15px 35px;
 margin:10px;
-background:white;
-color:#7b00ff;
+border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-border-radius:50px;
-box-shadow:0 0 20px white;
+color:white;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.2);
+backdrop-filter:blur(20px);
+box-shadow:0 0 20px rgba(255,255,255,0.2);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px #ff0080;
 }
 
 section{
-padding:60px 20px;
+padding:80px 20px;
 }
 
 .title{
-text-align:center;
 font-size:40px;
-margin-bottom:35px;
+text-align:center;
+margin-bottom:40px;
 }
 
 .cards{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:25px;
 }
 
 .card{
-width:280px;
-padding:30px;
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(10px);
+width:300px;
+padding:25px;
 border-radius:30px;
-text-align:center;
-box-shadow:0 0 20px rgba(255,255,255,0.3);
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #0099ff;
+}
+
+.card img{
+width:100%;
+border-radius:20px;
+margin-bottom:15px;
 }
 
 .card h3{
@@ -91,11 +129,11 @@ margin-bottom:15px;
 
 footer{
 text-align:center;
-padding:50px 20px;
-background:rgba(0,0,0,0.2);
+padding:50px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -109,6 +147,7 @@ background:rgba(0,0,0,0.2);
 </div>
 
 <div class="buttons">
+
 <a class="btn" href="https://wa.me/996557798008">
 WhatsApp
 </a>
@@ -116,10 +155,10 @@ WhatsApp
 <a class="btn" href="https://instagram.com/flexi_studio.kg">
 Instagram
 </a>
+
 </div>
 
 </header>
-
 <section>
 
 <div class="title">
@@ -130,23 +169,128 @@ Instagram
 
 <div class="card">
 <h3>🖨️ 3D-печать</h3>
-<p>Изготовление изделий на заказ</p>
+<p>
+Изготовление изделий на заказ.<br><br>
+Стоимость зависит от сложности модели, расхода пластика и времени печати.
+</p>
 </div>
 
 <div class="card">
-<h3>🎨 Дизайн</h3>
-<p>Логотипы, макеты и фирменный стиль</p>
+<h3>🎨 Логотипы</h3>
+<p>
+Разработка логотипов и фирменного стиля.<br><br>
+Стоимость от 1500 сом.
+</p>
 </div>
 
 <div class="card">
-<h3>📇 Полиграфия</h3>
-<p>Визитки, баннеры, наклейки и многое другое</p>
+<h3>💳 Визитки</h3>
+<p>
+Дизайн визиток и рекламных материалов.<br><br>
+Стоимость от 500 сом.
+</p>
+</div>
+
+<div class="card">
+<h3>📢 Баннеры</h3>
+<p>
+Баннеры для соцсетей и печати.<br><br>
+Стоимость от 800 сом.
+</p>
+</div>
+
+<div class="card">
+<h3>📄 Флаеры</h3>
+<p>
+Дизайн двусторонних флаеров.<br><br>
+Стоимость от 1000 сом.
+</p>
+</div>
+
+<div class="card">
+<h3>📦 Дизайн упаковки</h3>
+<p>
+Разработка коробочек и упаковки.<br><br>
+Стоимость от 1000 сом.
+</p>
+</div>
+
+<div class="card">
+<h3>✨ Фирменный стиль</h3>
+<p>
+Комплексный дизайн для бизнеса.<br><br>
+Стоимость от 8000 сом.
+</p>
 </div>
 
 </div>
 
 </section>
+<section>
 
+<div class="title">
+Наши работы
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="photo_2026-06-22_19-51-30.jpg">
+<h3>🖨️ 3D-печать</h3>
+<p>
+Изготовление изделий любой сложности.
+Стоимость рассчитывается индивидуально.
+</p>
+</div>
+
+<div class="card">
+<img src="photo_2026-06-22_19-51-42.jpg">
+<h3>📄 Флаеры</h3>
+<p>
+Дизайн двусторонних флаеров.
+От 1000 сом.
+</p>
+</div>
+
+<div class="card">
+<img src="photo_2026-06-22_19-51-49.jpg">
+<h3>📦 Дизайн упаковки</h3>
+<p>
+Разработка коробочек и упаковки.
+От 1000 сом.
+</p>
+</div>
+
+<div class="card">
+<img src="photo_2026-06-22_19-51-58.jpg">
+<h3>✨ Фирменный стиль</h3>
+<p>
+Комплексный дизайн для бизнеса.
+От 8000 сом.
+</p>
+</div>
+
+<div class="card">
+<img src="photo_2026-06-22_19-52-16.jpg">
+<h3>📢 Баннеры</h3>
+<p>
+Рекламные баннеры для соцсетей и печати.
+От 800 сом.
+</p>
+</div>
+
+<div class="card">
+<img src="photo_2026-06-22_19-52-09.jpg">
+<h3>💳 Визитки</h3>
+<p>
+Современный дизайн визиток.
+От 500 сом.
+</p>
+</div>
+
+</div>
+
+</section>
 <section>
 
 <div class="title">
@@ -157,59 +301,23 @@ Instagram
 
 <div class="card">
 <h3>⚡ Быстро</h3>
-<p>Оперативное выполнение заказов</p>
+<p>
+Оперативное выполнение заказов и соблюдение сроков.
+</p>
 </div>
 
 <div class="card">
 <h3>✨ Качественно</h3>
-<p>Современный дизайн и качественная печать</p>
+<p>
+Современный дизайн и качественная печать.
+</p>
 </div>
 
 <div class="card">
 <h3>💜 Индивидуально</h3>
-<p>Подходим к каждому заказу с вниманием</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="title">
-Наши работы
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>🖨️ 3D-печать</h3>
-<p>Фигурки, детали и изделия на заказ</p>
-</div>
-
-<div class="card">
-<h3>📇 Визитки</h3>
-<p>Стильные визитные карточки</p>
-</div>
-
-<div class="card">
-<h3>🖼️ Баннеры</h3>
-<p>Широкоформатная печать</p>
-</div>
-
-<div class="card">
-<h3>🏷️ Наклейки</h3>
-<p>Печать наклеек и стикеров</p>
-</div>
-
-<div class="card">
-<h3>🎨 Логотипы</h3>
-<p>Создание фирменного стиля</p>
-</div>
-
-<div class="card">
-<h3>📦 Полиграфия</h3>
-<p>Листовки, меню, таблички и многое другое</p>
+<p>
+Подходим к каждому проекту с вниманием и заботой.
+</p>
 </div>
 
 </div>
@@ -262,66 +370,6 @@ Instagram
 <p>© 2026 Flexi Studio</p>
 
 </footer>
-<section id="portfolio">
-<h2>Наши работы</h2>
 
-<section id="portfolio">
-<h2>Наши работы</h2>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-30.jpg" width="100%">
-<h3>🛡 Безопасная Империя</h3>
-<p>Разработка логотипа и фирменного стиля.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-42.jpg" width="100%">
-<h3>📋 Буклет компании</h3>
-<p>Дизайн рекламного буклета.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-49.jpg" width="100%">
-<h3>ℹ О компании</h3>
-<p>Информационный дизайн и контакты.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-53.jpg" width="100%">
-<h3>📦 Упаковка</h3>
-<p>Дизайн упаковки продукции.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-58.jpg" width="100%">
-<h3>👕 Футболки</h3>
-<p>Дизайн одежды и мокапы.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-52-02.jpg" width="100%">
-<h3>🍔 Оформление кафе</h3>
-<p>Дизайн брендированных элементов.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-52-05.jpg" width="100%">
-<h3>🍟 Меню</h3>
-<p>Разработка меню и рекламных материалов.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-52-09.jpg" width="100%">
-<h3>💡 Логотип</h3>
-<p>Создание фирменного знака.</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-52-16.jpg" width="100%">
-<h3>✈ Баннер</h3>
-<p>Рекламный баннер для Sky Finesse.</p>
-</div>
-
-</section>
 </body>
 </html>
