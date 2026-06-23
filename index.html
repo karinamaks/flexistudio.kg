@@ -16,121 +16,292 @@ scroll-behavior:smooth;
 }
 
 body{
-background:
-radial-gradient(circle at top left,#7a004f,transparent 40%),
-radial-gradient(circle at bottom right,#002b52,transparent 40%),
-#090b16;
+background:#050510;
 color:white;
 overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#ff00aa55,transparent 25%),
+radial-gradient(circle at bottom right,#00aaff55,transparent 25%);
+z-index:-1;
 }
 
 header{
 min-height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-text-align:center;
-padding:20px;
+padding:50px 8%;
+gap:40px;
 }
 
-h1{
-font-size:90px;
-background:linear-gradient(90deg,#00bfff,#8a2be2,#ff00ff);
+.logo-text{
+flex:1;
+}
+
+.logo-text h1{
+font-size:110px;
+line-height:100px;
+font-weight:900;
+}
+
+.gradient{
+background:linear-gradient(90deg,#ff43c6,#00d9ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .slogan{
-font-size:28px;
+font-size:32px;
 margin-top:20px;
 }
 
 .buttons{
 display:flex;
 gap:20px;
-flex-wrap:wrap;
 margin-top:40px;
+flex-wrap:wrap;
 }
 
 .btn{
 padding:18px 40px;
-border-radius:50px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(20px);
-color:white;
+border-radius:20px;
 text-decoration:none;
+color:white;
+font-size:20px;
+background:linear-gradient(90deg,#ff3cac,#784ba0,#2b86c5);
+box-shadow:0 0 20px #ff00ff66;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.hero-img{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-img img{
+width:100%;
+max-width:700px;
+filter:drop-shadow(0 0 40px #ff00ff);
 }
 
 section{
-padding:100px 20px;
+padding:100px 8%;
+}
+
+.title{
+font-size:55px;
+text-align:center;
+margin-bottom:60px;
+font-weight:bold;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,0,255,.5);
+border-radius:25px;
+padding:30px;
+box-shadow:0 0 20px rgba(255,0,255,.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #00d9ff;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.card p{
+line-height:1.8;
+font-size:18px;
+}
+
+.price{
+margin-top:25px;
+font-size:28px;
+font-weight:bold;
+color:#00d9ff;
+}
+
+.work img{
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+}
+  footer{
+padding:100px 8%;
+text-align:center;
+}
+
+footer h2{
+font-size:70px;
+}
+
+footer p{
+margin-top:20px;
+color:#ccc;
+}
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,0,255,.4);
+border-radius:25px;
+padding:30px;
+backdrop-filter:blur(20px);
+box-shadow:
+0 0 15px rgba(255,0,255,.3),
+0 0 30px rgba(0,200,255,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 25px #ff00ff,
+0 0 50px #00cfff;
 }
 
 .title{
 font-size:60px;
 text-align:center;
 margin-bottom:60px;
+font-weight:900;
+text-transform:uppercase;
 }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+.title::after{
+content:"";
+display:block;
+width:120px;
+height:4px;
+margin:15px auto;
+background:linear-gradient(90deg,#ff00ff,#00cfff);
+border-radius:50px;
 }
 
-.card{
-width:320px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:30px;
-padding:30px;
-backdrop-filter:blur(20px);
+h2{
+background:linear-gradient(90deg,#ff4fd8,#00cfff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.card img{
-width:100%;
+body{
+background:
+radial-gradient(circle at top left,#ff00ff22,transparent 30%),
+radial-gradient(circle at bottom right,#00cfff22,transparent 30%),
+#070912;
+}
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(#ff00ff,#00cfff);
 border-radius:20px;
-margin-bottom:20px;
 }
 
-footer{
-padding:100px 20px;
+.btn{
+background:linear-gradient(90deg,#ff00aa,#8f3cff,#00cfff);
+box-shadow:0 0 20px rgba(255,0,255,.5);
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:
+0 0 30px #ff00ff,
+0 0 50px #00cfff;
+}
+@media(max-width:900px){
+
+header{
+flex-direction:column;
 text-align:center;
 }
 
+.logo-text h1{
+font-size:75px;
+line-height:75px;
+}
+
+.slogan{
+font-size:24px;
+}
+
+.title{
+font-size:40px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<h1>Flexi Studio</h1>
+<div class="logo-text">
+
+<h1>
+FLEXI<br>
+<span class="gradient">STUDIO</span>
+</h1>
 
 <div class="slogan">
-Дизайн • Печать • 3D-печать
+Создаём идеи, которые работают ✨
 </div>
 
 <div class="buttons">
-
-<a class="btn" href="#works">
-Наши работы
-</a>
 
 <a class="btn"
 href="https://wa.me/996557798008">
 WhatsApp
 </a>
 
+<a class="btn"
+href="https://instagram.com/flexi_studio.kg">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-img">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200">
+
 </div>
 
 </header>
+
 <section>
 
 <div class="title">
-Наши услуги
+НАШИ УСЛУГИ
 </div>
 
 <div class="cards">
@@ -138,90 +309,114 @@ WhatsApp
 <div class="card">
 <h3>🖨️ 3D-печать</h3>
 <p>
-Изготовление изделий на заказ.
-Стоимость зависит от сложности модели,
-расхода пластика и времени печати.
+Изготовление изделий любой сложности.
 </p>
+<div class="price">
+Индивидуально
+</div>
 </div>
 
 <div class="card">
 <h3>🎨 Логотипы</h3>
 <p>
 Разработка логотипов и фирменного стиля.
-От 1500 сом.
 </p>
+<div class="price">
+от 1500 сом
+</div>
 </div>
 
 <div class="card">
 <h3>💳 Визитки</h3>
 <p>
 Современный дизайн визиток.
-От 500 сом.
 </p>
+<div class="price">
+от 500 сом
+</div>
 </div>
 
 <div class="card">
+<h3>📢 Баннеры</h3>
+<p>
+Баннеры для соцсетей и печати.
+</p>
+<div class="price">
+от 800 сом
+</div>
+</div>
+<div class="card">
 <h3>📄 Флаеры</h3>
 <p>
-Дизайн двусторонних флаеров.
-От 1000 сом.
+Яркие рекламные флаеры для бизнеса.
 </p>
+<div class="price">
+от 1000 сом
+</div>
+</div>
+
+<div class="card">
+<h3>📦 Упаковка</h3>
+<p>
+Дизайн упаковки и этикеток.
+</p>
+<div class="price">
+от 1000 сом
+</div>
+</div>
+
+<div class="card">
+<h3>⭐ Фирменный стиль</h3>
+<p>
+Полный фирменный стиль компании.
+</p>
+<div class="price">
+от 8000 сом
+</div>
 </div>
 
 </div>
 
 </section>
-
-<section id="works">
+<section>
 
 <div class="title">
-Наши работы
+ПОЧЕМУ ВЫБИРАЮТ НАС
 </div>
 
 <div class="cards">
 
 <div class="card">
-<img src="photo_2026-06-22_19-52-09.jpg">
-<h3>🖨️ Полиграфия</h3>
+<h3>⚡ БЫСТРО</h3>
 <p>
-Меню, листовки, наклейки и другая печатная продукция.
+Оперативное выполнение заказов
+в кратчайшие сроки.
 </p>
 </div>
 
 <div class="card">
-<img src="photo_2026-06-22_19-51-30.jpg">
-<h3>🎨 Логотипы</h3>
+<h3>🛡 КАЧЕСТВЕННО</h3>
 <p>
-Разработка логотипов и фирменного стиля.
-От 1500 сом.
+Современный дизайн и
+качественная печать.
 </p>
 </div>
 
 <div class="card">
-<img src="photo_2026-06-22_19-51-49.jpg">
-<h3>💳 Визитки</h3>
+<h3>💜 ИНДИВИДУАЛЬНО</h3>
 <p>
-Современный дизайн визиток.
-От 500 сом.
-</p>
-</div>
-
-<div class="card">
-<img src="photo_2026-06-22_19-51-53.jpg">
-<h3>📄 Флаеры</h3>
-<p>
-Дизайн двусторонних флаеров.
-От 1000 сом.
+Подходим к каждому заказу
+с вниманием и креативом.
 </p>
 </div>
 
 </div>
 
 </section>
-  <section>
+<section>
 
 <div class="title">
-Почему выбирают нас
+ПОЧЕМУ ВЫБИРАЮТ НАС
 </div>
 
 <div class="cards">
@@ -229,32 +424,110 @@ WhatsApp
 <div class="card">
 <h3>⚡ Быстро</h3>
 <p>
-Оперативное выполнение заказов и соблюдение сроков.
+Оперативное выполнение заказов.
 </p>
 </div>
 
 <div class="card">
-<h3>✨ Качественно</h3>
+<h3>🛡️ Качественно</h3>
 <p>
 Современный дизайн и качественная печать.
 </p>
 </div>
 
 <div class="card">
-<h3>💜 Индивидуальный подход</h3>
+<h3>💜 Индивидуально</h3>
 <p>
-Подходим к каждому проекту с вниманием и заботой.
+Подходим к каждому проекту с вниманием.
 </p>
 </div>
 
 </div>
 
 </section>
-
 <section>
 
 <div class="title">
-Контакты
+НАШИ РАБОТЫ
+</div>
+
+<div class="cards">
+
+<div class="card work">
+<img src="photo1.jpg">
+<h3>🎨 Логотип</h3>
+<p>Создание фирменного стиля.</p>
+</div>
+
+<div class="card work">
+<img src="photo2.jpg">
+<h3>📖 Буклет</h3>
+<p>Дизайн рекламного буклета.</p>
+</div>
+
+<div class="card work">
+<img src="photo3.jpg">
+<h3>💳 Визитка</h3>
+<p>Современный дизайн визиток.</p>
+</div>
+
+<div class="card work">
+<img src="photo4.jpg">
+<h3>📦 Упаковка</h3>
+<p>Разработка упаковки.</p>
+</div>
+
+<div class="card work">
+<img src="photo5.jpg">
+<h3>🍔 Меню</h3>
+<p>Дизайн меню и рекламных материалов.</p>
+</div>
+
+<div class="card work">
+<img src="photo6.jpg">
+<h3>🖼️ Баннер</h3>
+<p>Рекламные баннеры.</p>
+</div>
+
+</div>
+
+</section>
+<section>
+
+<div class="title">
+ОТЗЫВЫ
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+«Очень быстро и качественно! Заказывали визитки и баннер, всё понравилось.»
+</p>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+«Отличный дизайн, всегда на связи. Будем обращаться ещё!»
+</p>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+«Заказ выполнили раньше срока. Спасибо Flexi Studio!»
+</p>
+</div>
+
+</div>
+
+</section>
+<section>
+
+<div class="title">
+КОНТАКТЫ
 </div>
 
 <div class="cards">
@@ -264,8 +537,7 @@ WhatsApp
 <h3>📞 Телефоны</h3>
 
 <p>
-0557 79 80 08
-<br><br>
+0557 79 80 08<br><br>
 0556 70 06 96
 </p>
 
@@ -279,7 +551,8 @@ WhatsApp
 
 <br><br>
 
-<a class="btn" href="https://wa.me/996557798008">
+<a class="btn"
+href="https://wa.me/996557798008">
 Написать в WhatsApp
 </a>
 
@@ -288,19 +561,36 @@ WhatsApp
 </div>
 
 </section>
-  <footer>
+<section>
 
-<h2 style="font-size:50px;">
+<div class="title">
+КАРТА
+</div>
+
+<div class="card">
+<h3>📍 Бишкек</h3>
+<p>
+Работаем по всему Кыргызстану.<br><br>
+Свяжитесь с нами через WhatsApp или Instagram для заказа.
+</p>
+
+<a class="btn"
+href="https://wa.me/996557798008">
+Написать в WhatsApp
+</a>
+
+</div>
+
+</section>
+<footer>
+
+<h2>
 Flexi Studio
 </h2>
-
-<br>
 
 <p>
 Создаём идеи, которые работают ✨
 </p>
-
-<br><br>
 
 <p>
 © 2026 Flexi Studio
